@@ -8,6 +8,7 @@ import { FormGroup } from '@angular/forms';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent implements OnInit{
+  //declared dummy api
   url:string = '/assets/data.json'
   str:string ="Hello"
   data: any[]=[];
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit{
     this.promData = this.getDataViaPromise()
   }
   ngOnInit() {
+    //used observables to get the api data
     this.http.get(this.url).subscribe((res:any)=>{
       console.log(res);
       this.data = res.data
@@ -32,6 +34,7 @@ export class AppComponent implements OnInit{
   }
 
   getDataViaPromise(){
+    //used promises to return data
    return this.http.get(this.url).toPromise().then((res:any)=>{
     console.log(res)
     this.data = res.data
@@ -41,7 +44,7 @@ export class AppComponent implements OnInit{
   }
 
   navigateToHome(){
-this.router.navigate(['/home'])
+      this.router.navigate(['/home'])
   }
 
   onSubmit(){

@@ -7,6 +7,8 @@ import {arr} from '../interface'
 })
 export class ChildPage implements OnInit,OnChanges {
  @Input() formData:any
+
+ //used intefrace to declare array of objects
  arrOfObj:arr[]=[
 {
   "name":"ank",

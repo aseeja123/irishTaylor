@@ -30,6 +30,7 @@ isFormVisible:boolean = false
   
   }
   showForm(){
+    
 this.isFormVisible = !this.isFormVisible
   }
 
